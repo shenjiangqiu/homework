@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{graphicx}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\large CS3311 Homework 9} \hfill
+Due date: Tuesday, November 6, 2018, 11:59pm\\
+\hfill
+Submission: Typed, pdf on Canvas (scanned submissions are not allowed)\\
+\vspace{-0.1in}
+\rule{\textwidth}{0.5mm}
+
+\begin{small}
+The answers must be the original work of the author.  While discussion
+with others is permitted and encouraged, the final work should be done
+individually. You are not allowed to work in groups.  You are allowed to
+build on the material supplied in the class. Any other source must be
+specified clearly.
+\end{small}
+\rule{\textwidth}{0.5mm}
+
+
+{\bf 1.} {\em (20+30 points)} Let $M$ be the following NFA-$\lambda$:
+
+\vspace{-0.15in}
+
+\begin{center}
+\includegraphics[width=0.35\textwidth]{nfa-lambda-to-dfa-q.pdf}
+\end{center}
+
+\vspace{-0.1in}
+
+{\bf (a)} Give the input transition function (t) for $M$ in tabular form.
+Include a column for the $\lambda$-closure of each state. Remember that
+each state is a member of its $\lambda$-closure.
+\\this is the transition function(not the input transition function)\\
+\begin{tabular}{l |c| c| r}
+    $\delta$&a&b&$\lambda$\\
+    $q_0$&$q_0$ &$\emptyset$ & $q_1,q_3$\\
+    $q_1$& $q_2$&$q_4$ &$\emptyset$  \\
+    $q_2$&$\emptyset$ &$q_1$ & $\emptyset$ \\
+    $q_3$& $q_4$&$q_3$ &$\emptyset$ \\
+    $q_4$& $\emptyset$&$\emptyset$ &$\emptyset$  \\
+
+\end{tabular}
+\\
+\\this is the $\lambda$-transition\\
+\begin{tabular}{l|r}
+    '$\lambda$-closure'&$\lambda$-closure\\
+    $q_0$&$q_0,q_1,q_3$\\
+    $q_1$& $q_1$  \\
+    $q_2$&$q_2$ \\
+    $q_3$& $q_3$ \\
+    $q_4$&$q_4$ \\
+
+\end{tabular}
+\\
+\\this is the input transition\\
+\begin{tabular}{l |c|r}
+    $t$&a&b\\
+    $q_0$&$q_0,q_1,q_2,q_3,q_4$ &$q_3,q_4$ \\
+    $q_1$& $q_2$&$q_4$\\
+    $q_2$ & $\emptyset$ &$q_1$ \\
+    $q_3$& $q_4$&$q_3$  \\
+    $q_4$& $\emptyset$&$\emptyset$   \\
+
+\end{tabular}\\
+{\bf (b)} Construct a state diagram of a DFA that
+is equivalent to $M$. Give the transition function and draw the
+state diagram of the equivalent DFA.
+\\this is the transition function(not the input transition function)
+\begin{tabular}{l |c|c| r}
+    '  '&a&b\\
+    $q_0$&$q_0$ &$\emptyset$ & $q_0,q_1,q_3$\\
+    $q_1$& $q_2$&$q_4$ &$q_1$ \\
+    $q_2$&$\emptyset$ &$q_1$ & $q_2$\\
+    $q_3$& $q_4$&$q_3$ &$q_3$ \\
+    $q_4$& $\emptyset$&$\emptyset$ &$q_4$ \\
+
+\end{tabular}
+\\
+
+{\bf 2.} {\em (30+20 points)} Consider the DFA below.
+
+\vspace{-0.1in}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{dfa-to-minimize.pdf}
+\end{center}
+
+{\bf (a)} Construct a two dimensional table where the row and column
+headers are the states of the above DFA. Mark each cell with a `1' (or a
+higher number representing the iteration number) if the states are
+``different.'' Unmarked cells will represent indistinguishable states.
+
+{\bf (b)} Construct a minimized DFA by collapsing (groups of)
+indistinguishable states into single states.
+
+
+
+\end{document}
+
